@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Bean {
+  id         String    @id @default(uuid())
+  roaster    String
+  name       String
+  origin     String
+  variety    String?
+  process    String
+  roastDate  DateTime
+  openDate   DateTime?
+  isFinished Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  brewLogs   BrewLog[]
+}
+
+model BrewLog {
+  id           String   @id @default(uuid())
+  beanId       String
+  method       String
+  doseGrams    Float
+  yieldMl      Float
+  waterTempC   Float
+  grindSetting String
+  brewTimeMin  Int
+  brewTimeSec  Int
+  rating       Float
+  tastingNotes String?
+  createdAt    DateTime @default(now())
+
+  bean Bean @relation(fields: [beanId], references: [id], onDelete: Cascade)
+}
