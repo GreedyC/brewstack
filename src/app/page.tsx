@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -154,24 +155,30 @@ export default async function DashboardPage() {
         </div>
         <div className="grid gap-4">
           <div className="h-40 overflow-hidden rounded-[28px] border border-[rgba(75,45,23,0.16)] shadow-soft">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
               alt="Brew"
+              width={800}
+              height={320}
               className="h-full w-full object-cover"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="h-32 overflow-hidden rounded-[24px] border border-[rgba(75,45,23,0.16)] shadow-soft">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=600&q=80"
                 alt="Beans"
+                width={600}
+                height={260}
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="h-32 overflow-hidden rounded-[24px] border border-[rgba(75,45,23,0.16)] shadow-soft">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=600&q=80"
                 alt="Pour over"
+                width={600}
+                height={260}
                 className="h-full w-full object-cover"
               />
             </div>
