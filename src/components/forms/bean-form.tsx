@@ -82,6 +82,7 @@ export function BeanForm() {
 
       setFormData(initialState);
       setStatus("success");
+      window.location.href = "/beans";
     } catch (error) {
       setStatus("error");
     }

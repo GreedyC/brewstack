@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card";
 import { Table, TableCell, TableHead, TableHeaderCell, TableRow } from "@/components/ui/table";
 import { formatDateTime, formatDurationParts, formatNumber } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export default async function BrewsPage() {
   const brews = await prisma.brewLog.findMany({
     orderBy: { createdAt: "desc" },

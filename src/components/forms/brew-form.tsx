@@ -105,6 +105,7 @@ export function BrewForm({ beans }: BrewFormProps) {
 
       setFormData(initialState);
       setStatus("success");
+      window.location.href = "/brews";
     } catch (error) {
       setStatus("error");
     }

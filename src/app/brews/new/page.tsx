@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { BrewForm } from "@/components/forms/brew-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewBrewPage() {
   const beans = await prisma.bean.findMany({
     where: { isFinished: false },

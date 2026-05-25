@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { BeansTable } from "@/components/beans/beans-table";
 
+export const dynamic = "force-dynamic";
+
 export default async function BeansPage() {
   const beans = await prisma.bean.findMany({
     orderBy: { roastDate: "desc" }
